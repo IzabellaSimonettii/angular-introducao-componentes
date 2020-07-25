@@ -1,8 +1,21 @@
 <ng-container>
-  <div class="container-home">
-    <div class="box">
+  <div class="container">
+    <form>
 
+      <div class="box">
+        <div class="form-group">
 
-    </div>
+          <label for="nomeInput">Nome</label>
+
+          <input type="nome" class="form-control" id="nomeInput" placeholder="Nome" #nomeInput>
+
+          <button type="button" class="btn btn-primary btn-block" (click)="adicionar(nomeInput)">Adicionar</button>
+
+          <div class="alert alert-primary mt-3 p-3" [hidden]="!alerta">{{nome}}</div>
+
+        </div>
+      </div>
+
+    </form>
   </div>
 </ng-container>
