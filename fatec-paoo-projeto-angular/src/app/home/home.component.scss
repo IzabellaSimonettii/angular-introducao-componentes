@@ -1,33 +1,8 @@
 .container {
   z-index: 1;
-  margin: 0;
   padding: 0;
   position: fixed;
   overflow: hidden;
   width: 100%;
   height: 100%;
-
-
-  .box {
-    box-shadow: -3px -1px 10px -2px rgba(56, 51, 56, 0.3);
-    margin: 200px auto;
-    padding: 20px;
-    max-width: 360px;
-    max-height: 230px;
-
-    .btn-primary {
-      margin-top: 10px;
-    }
-
-    .description {
-      font-size: 16px;
-      font-weight: 400;
-      text-transform: uppercase;
-      cursor: pointer;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      // olhar a letra do site atual
-      color: #07455c;
-      vertical-align: middle;
-    }
-  }
 }

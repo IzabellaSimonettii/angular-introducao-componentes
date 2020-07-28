@@ -1,1 +1,43 @@
-<p>courses works!</p>
+<ng-container>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12 form-group">
+        <label for="courseNameInput">Curso</label>
+        <input type="text" class="form-control" id="courseNameInput" #courseNameInput>
+      </div>
+
+      <div class="col-md-6 form-group-mb-2">
+        <label for="coursePeriodInput">Período</label>
+        <input type="text" class="form-control" id="coursePeriodInput" #coursePeriodInput>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="courseYearInput">Ano</label>
+        <input type="text" class="form-control" id="courseYearInput" #courseYearInput>
+      </div>
+
+      <div class="col-md-12 form-group-mb-2">
+        <label for="courseTypeInput">Tipo de Graduacao</label>
+        <input type="text" class="form-control" id="courseTypeInput" #courseTypeInput>
+      </div>
+      <br>
+      <br>
+
+      <div class="col-md-12 form-group-mb-2">
+        <div class="row">
+          <button class="btn btn-primary btn-block" (click)="adicionarCurso(courseNameInput.value, coursePeriodInput.value, 
+        courseYearInput.value, courseTypeInput.value)">Cadastrar Curso</button>
+        </div>
+      </div>
+    </div>
+    <!-- <div *ngIf="courses.name === 'Analise e desenvolvimento de sistemas'"> -->
+    <br>
+    <br>
+
+    <app-analysis-and-development-of-systems [course]="courses"></app-analysis-and-development-of-systems>
+
+    <!-- </div> -->
+
+  </div>
+</ng-container>
