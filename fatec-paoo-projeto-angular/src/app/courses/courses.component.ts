@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ICourses } from '../interfaces/ICourses';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-courses',
@@ -10,9 +11,14 @@ export class CoursesComponent implements OnInit {
 
   @Output() cursoAdicionado = new EventEmitter();
 
+  public formCouses: FormGroup;
   public courses: ICourses;
 
-  constructor() { }
+  private showInvalidFields = false;
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit() {
   }
@@ -31,38 +37,15 @@ export class CoursesComponent implements OnInit {
     console.log('Array', info);
   }
 
-  // public getCouses(info: ICourses[]) {
-  //   return of(this.mockGetCouses());
+  submit() {
 
-  // }
+    if (this.formCouses.valid) {
 
-  // private mockGetCouses() {
+      const values = this.formCouses.value;
+      this.adicionarCurso(values);
 
-  //   const cousesMock = `{
-  //     "couses": [
-  //       {
-  //         "id": ["1238468"],
-  //         "name": "Analise e desenvolvimento de sistemas",
-  //         "period": "Manha",
-  //         "year": 2015
-  //         "type": "Tecnologo"
-  //       },
-  //       {
-  //         "id": ["0874535"],
-  //         "name": "Gestao Comercial",
-  //         "period": "Tarde",
-  //         "year": 2016
-  //         "type": "Tecnologo"
-  //       },
-  //       {
-  //         "id": ["4823442"],
-  //         "name": "Eventos",
-  //         "period": "Noite",
-  //         "year": 2018
-  //         "type": "Tecnologo"
-  //       }
-  //     ]
-  //   }`;
-  //   return JSON.parse(cousesMock);
-  // }
+    } else {
+      this.showInvalidFields = true;
+    }
+  }
 }

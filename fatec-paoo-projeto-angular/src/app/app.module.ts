@@ -8,8 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { CoursesComponent } from './courses/courses.component';
 import {
-  AnalysisAndDevelopmentOfSystemsComponent
-} from './courses/analysis-and-development-of-systems/analysis-and-development-of-systems.component';
+  CourseComponent
+} from './courses/course/course.component';
 // import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -19,7 +19,7 @@ import {
     HomeComponent,
     FooterComponent,
     CoursesComponent,
-    AnalysisAndDevelopmentOfSystemsComponent
+    CourseComponent
   ],
   imports: [
     BrowserModule,

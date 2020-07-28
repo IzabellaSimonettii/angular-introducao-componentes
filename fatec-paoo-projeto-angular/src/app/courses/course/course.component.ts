@@ -3,10 +3,10 @@ import { ICourses } from 'src/app/interfaces/ICourses';
 
 @Component({
   selector: 'app-analysis-and-development-of-systems',
-  templateUrl: './analysis-and-development-of-systems.component.html',
-  styleUrls: ['./analysis-and-development-of-systems.component.scss']
+  templateUrl: './course.component.html',
+  styleUrls: ['./course.component.scss']
 })
-export class AnalysisAndDevelopmentOfSystemsComponent implements OnInit {
+export class CourseComponent implements OnInit {
 
   @Input() course: ICourses;
   constructor() { }
