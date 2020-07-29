@@ -3,20 +3,32 @@
     <form #courseForm="ngForm" (ngSubmit)="createForm(courseForm)">
 
       <div class="row">
-        <div class="form-group col-12">
+        <div class="form-group col-8">
           <label for="nomeInput">Curso</label>
           <input type="text" placeholder="Nome do curso" class="form-control p-4" name="name" [(ngModel)]="course.name">
         </div>
+
+        <div class="form-group col-md-4">
+          <label for="yearInput">Ciclos</label>
+          <input type="number" placeholder="Ciclos" class="form-control p-4" name="cicles" [(ngModel)]="course.cicles">
+        </div>
+
       </div>
 
       <div class="row">
 
-        <div class="form-group col-md-4">
-          <label for="yearInput">Ano</label>
-          <input type="date" placeholder="year" class="form-control p-4" name="year" [(ngModel)]="course.year">
+        <div class="form-group col-md-6">
+          <label for="yearInput">Ano de Inicio</label>
+          <input type="number" placeholder="Ano" class="form-control p-4" name="year" [(ngModel)]="course.startYear">
         </div>
 
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
+          <label for="yearInput">Ciclos</label>
+          <input type="number" placeholder="Ciclos" class="form-control p-4" name="cicles" [(ngModel)]="course.cicles">
+        </div>
+
+
+        <div class="form-group col-md-6">
           <label for="courseTypeInput">Tipo de Graduacao</label>
 
           <select name="" id="courseTypeInput" class="form-control" name="type" [(ngModel)]="course.type">
@@ -26,7 +38,8 @@
 
         </div>
 
-        <div class="form-group col-md-4">
+
+        <div class="form-group col-md-6">
           <label for="coursePeriodInput">Período</label>
 
           <select name="" id="periodInput" class="form-control" name="period" [(ngModel)]="course.period">

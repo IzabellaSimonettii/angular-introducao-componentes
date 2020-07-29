@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -10,6 +10,9 @@ import { CoursesComponent } from './courses/courses.component';
 import {
   CourseComponent
 } from './courses/course/course.component';
+import { StudentsComponent } from './students/students.component';
+import { StudentComponent } from './students/student/student.component';
+import { EmployeesComponent } from './employees/employees.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import {
     HomeComponent,
     FooterComponent,
     CoursesComponent,
-    CourseComponent
+    CourseComponent,
+    StudentsComponent,
+    StudentComponent,
+    EmployeesComponent
   ],
   imports: [
     BrowserModule,

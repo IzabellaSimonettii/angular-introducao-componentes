@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ICourses } from '../interfaces/ICourses';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { Course } from '../model/course';
 @Component({
   selector: 'app-courses',
@@ -16,7 +16,7 @@ export class CoursesComponent implements OnInit {
   course: Course = new Course();
 
   public courseType = ['Bacharelado', 'Pos-Graduacao', 'Tecnologo', 'Mestrado', 'Doutorado', 'Outros'];
-  public coursePeriod = ['Manha', 'Tarde', 'Noite'];
+  public coursePeriod = ['Manha', 'Tarde', 'Noite', 'Integral'];
 
   constructor(
   ) { }
@@ -24,22 +24,11 @@ export class CoursesComponent implements OnInit {
   ngOnInit() {
   }
 
-  sendData() {
-    console.log(this.formCouses.value);
-  }
-
   createForm(courseForm) {
     this.courses.name = courseForm.value.name;
     this.courses.period = courseForm.value.period;
-    this.courses.year = courseForm.value.year;
+    this.courses.startYear = courseForm.value.startYear;
+    this.courses.cicles = courseForm.value.cicles;
     this.courses.type = courseForm.value.type;
-
-    console.log('courseForm', courseForm);
-
-    console.log(`
-    Nome: ${this.courses.name},
-    Periodo: ${this.courses.period},
-    Ano: ${this.courses.year},
-    Tipo: ${this.courses.type}`);
   }
 }

@@ -2,6 +2,8 @@ export class Course {
     id?: string;
     name: string;
     period: string;
-    year: number;
+    startYear: number;
+    endyear: number;
+    cicles: number;
     type: string;
 }
