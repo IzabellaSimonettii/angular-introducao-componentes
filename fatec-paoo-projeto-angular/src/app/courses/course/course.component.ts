@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ICourses } from 'src/app/interfaces/ICourses';
 
 @Component({
-  selector: 'app-analysis-and-development-of-systems',
+  selector: 'app-course',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.scss']
 })

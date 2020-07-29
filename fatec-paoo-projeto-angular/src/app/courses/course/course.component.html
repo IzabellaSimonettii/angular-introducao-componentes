@@ -1,17 +1,21 @@
-<div class="card p-0 m-2">
+<ng-container *ngIf="course">
+<div class="card p-0 m-2" [ngStyle]="{ 'margin' : '0 auto'}">
 
     <div class="card-header">
-        Pessoa
+        <p>{{course.name}}</p>
     </div>
 
-    <div class="card-body" >
+    <div class="card-body">
 
-        <p class="card-text">
-        <p>Curso: {{course.name}}</p>
-        <p>Ano: {{course.year}}</p>
-        <p>Periodo: {{course.period}}</p>
-        <p>Tipo do curso: {{course.type}}</p>
-
+        <p class="card-text"></p>
+        <p>Curso:  {{course.name}}</p>
+        <hr>
+        <p>Ano:  {{course.year}}</p>
+        <hr>
+        <p>Periodo:  {{course.period}}</p>
+        <hr>
+        <p>Tipo:  {{course.type}}</p>
     </div>
 
 </div>
+</ng-container>

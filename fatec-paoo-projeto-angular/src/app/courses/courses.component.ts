@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ICourses } from '../interfaces/ICourses';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
+import { Course } from '../model/course';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
@@ -13,39 +13,33 @@ export class CoursesComponent implements OnInit {
 
   public formCouses: FormGroup;
   public courses: ICourses;
+  course: Course = new Course();
 
-  private showInvalidFields = false;
+  public courseType = ['Bacharelado', 'Pos-Graduacao', 'Tecnologo', 'Mestrado', 'Doutorado', 'Outros'];
+  public coursePeriod = ['Manha', 'Tarde', 'Noite'];
 
   constructor(
-    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
   }
 
-  adicionarCurso(info: ICourses) {
-    const course = {
-      name: this.courses.name,
-      period: this.courses.period,
-      year: this.courses.year,
-      type: this.courses.type
-    };
-
-    this.courses = course;
-    this.cursoAdicionado.emit(course);
-
-    console.log('Array', info);
+  sendData() {
+    console.log(this.formCouses.value);
   }
 
-  submit() {
+  createForm(courseForm) {
+    this.courses.name = courseForm.value.name;
+    this.courses.period = courseForm.value.period;
+    this.courses.year = courseForm.value.year;
+    this.courses.type = courseForm.value.type;
 
-    if (this.formCouses.valid) {
+    console.log('courseForm', courseForm);
 
-      const values = this.formCouses.value;
-      this.adicionarCurso(values);
-
-    } else {
-      this.showInvalidFields = true;
-    }
+    console.log(`
+    Nome: ${this.courses.name},
+    Periodo: ${this.courses.period},
+    Ano: ${this.courses.year},
+    Tipo: ${this.courses.type}`);
   }
 }

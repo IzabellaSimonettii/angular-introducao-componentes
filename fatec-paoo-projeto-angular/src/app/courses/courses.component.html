@@ -1,46 +1,56 @@
 <ng-container>
   <div class="container">
-    <div class="row">
+    <form #courseForm="ngForm" (ngSubmit)="createForm(courseForm)">
 
-      <form [formGroup]="formCouses" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="form-group col-12">
+          <label for="nomeInput">Curso</label>
+          <input type="text" placeholder="Nome do curso" class="form-control p-4" name="name" [(ngModel)]="course.name">
+        </div>
+      </div>
 
-        <div class="col-md-12 form-group">
-          <label for="courseNameInput">Curso</label>
-          <input type="text" class="form-control" id="courseNameInput" #courseNameInput>
+      <div class="row">
+
+        <div class="form-group col-md-4">
+          <label for="yearInput">Ano</label>
+          <input type="date" placeholder="year" class="form-control p-4" name="year" [(ngModel)]="course.year">
         </div>
 
-        <div class="col-md-6 form-group-mb-2">
-          <label for="coursePeriodInput">Período</label>
-          <input type="text" class="form-control" id="coursePeriodInput" #coursePeriodInput>
-        </div>
-
-        <div class="col-md-6 form-group">
-          <label for="courseYearInput">Ano</label>
-          <input type="text" class="form-control" id="courseYearInput" #courseYearInput>
-        </div>
-
-        <div class="col-md-12 form-group-mb-2">
+        <div class="form-group col-md-4">
           <label for="courseTypeInput">Tipo de Graduacao</label>
-          <input type="text" class="form-control" id="courseTypeInput" #courseTypeInput>
+
+          <select name="" id="courseTypeInput" class="form-control" name="type" [(ngModel)]="course.type">
+            <option *ngFor="let type of courseType">{{type}}</option>
+            <option value="">Selecione</option>
+          </select>
+
         </div>
-        <br>
-        <br>
 
-        <div class="col-md-12 form-group-mb-2">
-          <div class="row">
-            <button class="btn btn-primary btn-block" type="submit">Cadastrar Curso</button>
-          </div>
+        <div class="form-group col-md-4">
+          <label for="coursePeriodInput">Período</label>
+
+          <select name="" id="periodInput" class="form-control" name="period" [(ngModel)]="course.period">
+            <option *ngFor="let period of coursePeriod">{{period}}</option>
+            <option value="">Selecione</option>
+          </select>
+
         </div>
-      </form>
 
-    </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary btn-block">Cadastrar Curso</button>
+        </div>
+      </div>
 
-    <br>
-    <br>
-
-    <div *ngIf="courses.name === 'Analise e desenvolvimento de sistemas'">
-      <app-course [course]="courses"></app-course>
-    </div>
-
+    </form>
   </div>
+
+  <div class="col-md-6" [ngStyle]="{ 'margin' : '0 auto'}">
+    <div class="center">
+      <app-course [course]="course"></app-course>
+    </div>
+  </div>
+
+
 </ng-container>

@@ -1,3 +1,7 @@
-/* .header {
-  position: fixed;
-} */
+.body-area {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  transform: initial;
+  min-height: 100vh;
+}
