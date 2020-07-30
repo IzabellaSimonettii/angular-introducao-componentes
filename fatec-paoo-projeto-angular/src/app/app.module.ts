@@ -13,6 +13,7 @@ import {
 import { StudentsComponent } from './students/students.component';
 import { StudentComponent } from './students/student/student.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { SubmitButtonEffectDirective } from './submit-button-effect.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EmployeesComponent } from './employees/employees.component';
     CourseComponent,
     StudentsComponent,
     StudentComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    SubmitButtonEffectDirective
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,9 @@ export class CoursesComponent implements OnInit {
 
   public formCouses: FormGroup;
   public courses: ICourses;
-  course: Course = new Course();
+  public sombraNaTela: string;
+
+  public course: Course = new Course();
 
   public courseType = ['Bacharelado', 'Pos-Graduacao', 'Tecnologo', 'Mestrado', 'Doutorado', 'Outros'];
   public coursePeriod = ['Manha', 'Tarde', 'Noite', 'Integral'];
